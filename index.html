@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="de"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="Multi-Upgrader">
+<meta name="theme-color" content="#0a0a0b">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<title>Multi-Upgrader</title>
+<style>
+:root{--bg:#0a0a0b;--s1:#131315;--s2:#1a1a1d;--bd:#26262a;--tx:#ededee;--mut:#8a8a92;--ac:#3ddc84;--bad:#e5484d;--w:min(92vw,400px);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:-apple-system,BlinkMacSystemFont,"Inter","Segoe UI",system-ui,sans-serif;display:flex;flex-direction:column;align-items:center;padding:22px 16px 32px;font-variant-numeric:tabular-nums;-webkit-font-smoothing:antialiased}
+h1{margin:0 0 18px;font-size:12px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--mut)}
+#best{font-size:14px;text-align:center;margin-bottom:12px}
+#best span{color:var(--mut);margin-right:6px}
+#progbox{width:var(--w);margin-bottom:26px}
+.bar{position:relative;height:3px;background:var(--s2);border-radius:2px}
+.fill{height:100%;background:var(--tx);border-radius:2px;width:0;transition:width .5s}
+.mk{position:absolute;top:-4px;width:2px;height:11px;background:var(--ac);display:none}
+.ticks{position:relative;height:14px;font-size:11px;color:var(--mut);margin-top:6px}
+.ticks span{position:absolute;transform:translateX(-50%)}
+#ptxt{font-size:12px;color:var(--mut);text-align:center;margin-top:8px}
+.wrap{position:relative;width:min(76vw,320px);aspect-ratio:1;border-radius:50%;margin:4px 0}
+.wrap::after{content:"";position:absolute;inset:-10px;border-radius:50%;border:1px solid transparent;transition:border-color .25s;pointer-events:none}
+.wrap.glow::after{border-color:var(--ac)}.wrap.shake::after{border-color:var(--bad)}
+canvas.w{position:absolute;inset:0;width:100%;height:100%}
+.needle{position:absolute;left:calc(50% - 1.5px);top:0;width:3px;height:50%;transform-origin:50% 100%;background:linear-gradient(#fff 0,#fff 18%,transparent 18%);border-radius:2px}
+.mid{position:absolute;inset:22%;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.mid b{font-size:44px;font-weight:600;letter-spacing:-.02em}
+.mid span{color:var(--mut);font-size:11px;letter-spacing:.12em;text-transform:uppercase;margin-top:4px}
+#fx,#flash{display:none}
+#res{min-height:22px;margin:16px 0 0;font-size:16px;font-weight:600;text-align:center}
+#res.pop{animation:fade .3s}
+@keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+#info{color:var(--mut);font-size:13px;margin-top:4px;text-align:center}
+.items{display:flex;align-items:stretch;gap:10px;margin-top:24px;width:var(--w)}
+.it{flex:1;min-width:0;background:var(--s1);border:1px solid var(--bd);border-radius:12px;padding:12px 14px;text-align:left;font-size:14px;display:flex;flex-direction:column;gap:3px;cursor:pointer;transition:border-color .15s,background .15s}
+.it:hover{border-color:#3a3a40}.it:active{background:var(--s2)}
+.it .k{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--mut)}
+.it b{font-weight:600;font-size:15px;display:flex;align-items:center;gap:7px}
+.it small{color:var(--mut);font-size:13px}
+.dot{width:8px;height:8px;border-radius:50%;display:inline-block;flex:none}
+.arrow{align-self:center;color:var(--mut);font-size:16px}
+.row{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;align-items:center}
+button{font:inherit;font-size:14px;color:var(--tx);background:var(--s1);border:1px solid var(--bd);border-radius:10px;padding:10px 14px;cursor:pointer;transition:background .15s,border-color .15s,transform .05s}
+button:hover{background:var(--s2);border-color:#34343a}
+button:active{transform:scale(.98)}
+button.on{background:#0f2418;border-color:#2c7a51;color:#7ae8ab}
+#qb.on,#qb2.on{background:#2a2108;border-color:#8a6d1c;color:#f5c542}
+button.go{width:var(--w);padding:14px;font-size:15px;font-weight:600;background:var(--tx);color:#0a0a0b;border-color:var(--tx);border-radius:12px;letter-spacing:.02em}
+button.go:hover{background:#fff}
+button:disabled{opacity:.4;cursor:default}
+.sheet button.go{width:100%}
+.ib{width:46px;height:46px;padding:0;display:flex;align-items:center;justify-content:center;border-radius:12px}
+.ib svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round}
+.chips{display:flex;gap:6px;flex-wrap:wrap;width:var(--w);margin-top:10px}
+.chips button{flex:1 1 56px;min-width:0;padding:8px 0;font-size:13px;border-radius:8px}
+#hist{display:flex;gap:5px;align-items:center;justify-content:center;margin-top:20px;color:var(--mut);font-size:12px;min-height:12px;flex-wrap:wrap}
+#hist span{margin-left:8px}
+.h{width:8px;height:8px;border-radius:50%;display:inline-block}.h.w{background:var(--ac)}.h.l{background:#3a3a40}
+.modal{position:fixed;inset:0;background:#000b;display:none;align-items:center;justify-content:center;z-index:10;padding:14px}
+.modal.show{display:flex;animation:fade .15s}
+.sheet{background:var(--s1);border:1px solid var(--bd);border-radius:16px;padding:20px;width:min(94vw,420px);max-height:86vh;overflow:auto;padding-bottom:calc(20px + env(safe-area-inset-bottom,0px))}
+.sheet h2{margin:0 0 14px;font-size:15px;font-weight:600}
+.sec{border-top:1px solid var(--bd);padding:14px 0}
+.lbl{display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:13px;color:var(--mut);margin-bottom:8px}
+.lbl b{color:var(--tx);font-weight:600}
+input[type=range]{width:100%;accent-color:#ededee}
+input[type=number],input[type=text]{padding:8px 10px;border-radius:8px;border:1px solid var(--bd);background:var(--bg);color:var(--tx);font:inherit;font-size:15px;width:96px}
+input[type=text]{width:150px}
+.pk{width:100%;display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;text-align:left;gap:10px;background:var(--s2)}
+.pk small,.rw small{color:var(--mut)}
+.rw{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--bd);font-size:14px}
+</style></head>
+<body>
+<canvas id="fx"></canvas><div id="flash"></div>
+<h1>Multi-Upgrader</h1>
+<div id="best"></div>
+<div id="progbox">
+ <div class="bar"><div class="fill" id="fill"></div><div class="mk" id="mk"></div></div>
+ <div class="ticks" id="ptk"><span style="left:2%">1 €</span><span style="left:33%">1.000 €</span><span style="left:67%">1 Mio.</span><span style="left:97%">1 Mrd.</span></div>
+ <div id="ptxt"></div>
+</div>
+<div class="wrap" id="wrap">
+<canvas class="w" id="c" width="680" height="680"></canvas>
+<div class="needle" id="n"></div>
+<div class="mid"><b id="pc">50%</b><span>Gewinnchance</span></div>
+</div>
+<div id="res"></div>
+<div id="info"></div>
+<div class="items" id="itemrow">
+ <div class="it" id="stk" onclick="openStake()"></div>
+ <div class="arrow">→</div>
+ <div class="it" id="tgt" onclick="openPicker()"></div>
+</div>
+<div class="row" style="margin-top:10px"><button id="gift" style="display:none" onclick="gift()">Gratis-Item holen</button></div>
+<div class="chips" id="qm"></div>
+<div class="chips p" id="qp"></div>
+<div class="row" style="margin-top:14px"><button class="go" id="go" onclick="spin()">UPGRADE</button></div>
+<div class="row" style="margin-top:14px">
+ <button class="ib" id="qb" onclick="toggleQuick()" title="Schnell-Modus"><svg viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></svg></button>
+ <button class="ib" id="sbi" onclick="toggleSound()" title="Sound an/aus"><svg viewBox="0 0 24 24"><path d="M11 5 6 9H3v6h3l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg></button>
+ <button class="ib" onclick="openList()" title="Preisliste" style="display:none"><svg viewBox="0 0 24 24"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg></button>
+ <button class="ib" onclick="openSettings()" title="Einstellungen"><svg viewBox="0 0 24 24"><path d="M4 6h10M18 6h2M4 12h2M10 12h10M4 18h12M20 18h0"/><circle cx="16" cy="6" r="2"/><circle cx="8" cy="12" r="2"/><circle cx="18" cy="18" r="2"/></svg></button>
+</div>
+<div id="hist"></div>
+
+<div class="modal" id="mSet" onclick="if(event.target===this)closeModal('mSet')"><div class="sheet">
+ <h2>Einstellungen</h2>
+ <div class="row" style="margin-bottom:6px;display:none"><button id="mdI" onclick="setMode('items')">Items</button><button id="mdF" onclick="setMode('free')">Multiplikator</button></div>
+ <div class="sec" id="secFree">
+  <div class="lbl"><span>Multiplikator</span><span><input type="number" id="num" min="1.01" max="100" step="0.01" value="2"> x</span></div>
+  <input type="range" id="sl" min="0" max="1000" value="0"><div class="ticks" id="ticks"></div>
+ </div>
+ <div class="sec">
+  <div class="lbl"><span>Drehdauer</span><b id="dl">5 s</b></div>
+  <input type="range" id="dur" min="0.3" max="20" step="0.1" value="5"><div class="ticks" id="dticks"></div>
+  <div class="row" style="margin-top:10px"><button id="qb2" onclick="toggleQuick()">Schnell-Modus</button></div>
+ </div>
+ <div class="sec">
+  <div class="lbl"><span>Quick-Buttons (Komma getrennt, Dezimal mit Punkt)</span></div>
+  <div class="lbl"><span>Multiplikator ×</span><input type="text" id="qmIn" onchange="editQuick()"></div>
+  <div class="lbl"><span>Chance %</span><input type="text" id="qpIn" onchange="editQuick()"></div>
+  <div class="row"><button onclick="resetQuick()">Standard</button></div>
+ </div>
+ <div class="sec">
+  <div class="lbl"><span>Sound</span><b id="vl">60%</b></div>
+  <div class="row" style="margin-bottom:8px"><button id="sb" onclick="toggleSound()">Sound: An</button><button onclick="testSound()">Testen</button></div>
+  <input type="range" id="vol" min="0" max="100" value="60">
+  <div style="font-size:12px;color:var(--mut);margin-top:6px">Kein Ton? Lautstärke hoch, Stumm-Schalter aus, Seite im normalen Browser öffnen.</div>
+ </div>
+ <div class="sec"><div class="row"><button id="rb" onclick="resetAll()">Spielstand löschen</button></div></div>
+ <div class="row"><button class="go" onclick="closeModal('mSet')">Fertig</button></div>
+</div></div>
+
+<div class="modal" id="mStake" onclick="if(event.target===this)closeModal('mStake')"><div class="sheet">
+ <h2>Einsatz wählen</h2>
+ <div class="lbl"><b id="stot"></b></div>
+ <div id="slist"></div>
+ <div class="row" style="margin-top:10px"><button onclick="stkAll()">Alles</button><button onclick="stkClear()">Leeren</button><button class="go" style="padding:10px 24px;font-size:15px" onclick="closeModal('mStake')">Fertig</button></div>
+</div></div>
+
+<div class="modal" id="mPick" onclick="if(event.target===this)closeModal('mPick')"><div class="sheet">
+ <h2>Ziel wählen</h2><div id="plist"></div>
+ <div class="row"><button onclick="closeModal('mPick')">Abbrechen</button></div>
+</div></div>
+
+<div class="modal" id="mList" onclick="if(event.target===this)closeModal('mList')"><div class="sheet">
+ <h2>Preisliste</h2>
+ <div class="lbl"><b id="lhead"></b></div>
+ <div id="llist"></div>
+ <div style="font-size:12px;color:var(--mut);margin:8px 0">Preise sind grobe Richtwerte in Euro.</div>
+ <div class="row"><button onclick="closeModal('mList')">Schließen</button></div>
+</div></div>
+
+<script>
+// Items mit groben Richtwert-Preisen (€), aufsteigend sortiert
+const col=v=>v<10?'#6b7280':v<100?'#60a5fa':v<1e3?'#818cf8':v<1e4?'#c084fc':v<1e5?'#f472b6':v<1e6?'#f87171':v<1e8?'#fbbf24':'#fde047';
+const IT=[
+['🍬','Kaugummi',1],['🍦','Eis am Stiel',2],['☕','Kaffee to go',3.5],['🍟','Pommes',4],['🥙','Döner',7],['🍔','Burger-Menü',9],['🍕','Pizza',11],['🎬','Kinoticket',13],['📚','Buch',15],['⚽','Fußball',20],['🖱️','Computer-Maus',30],['🎧','Kopfhörer',60],['💿','Videospiel',70],['👟','Sneaker',120],['🎵','AirPods',250],['🎮','Nintendo Switch',300],['⌚','Smartwatch',350],['🕹️','PlayStation 5',500],['🚲','Fahrrad',700],['💻','Laptop',1000],['📱','iPhone',1200],['🖥️','Gaming-PC',1500],['💻','MacBook Pro',2000],['🚴','E-Bike',2500],['🏝️','Luxus-Urlaub',3000],['🛵','Motorroller',3500],['💍','Diamantring',5000],['🚗','Gebrauchtwagen',8000],['⌚','Luxusuhr (Rolex)',10000],['🏍️','Motorrad',15000],['🚙','Neuwagen',25000],['🚘','Elektroauto',40000],['🏎️','Porsche 911',130000],['🏢','Eigentumswohnung',300000],['🏎️','Lamborghini',400000],['🏠','Einfamilienhaus',450000],['🏰','Luxus-Villa',1500000],['🚁','Hubschrauber',2000000],['✈️','Privatjet',5000000],['🛥️','Yacht',10000000],['🏝️','Private Insel',20000000],['🌟','Fußball-Superstar (Transfer)',100000000],['🖼️','Teuerstes Gemälde',450000000],['🏙️','Wolkenkratzer',1000000000]
+].map(([e,n,v])=>({e,n,v,c:col(v)}));
+const MIN=1.01,MAX=100,QUICK=2,LS='upgrader_v2_free',START={1:1,2:1,4:1},ONLY='free';
+let mode='items',fmult=2,inv={...START},sel={},tg=1,best=-1,bestMult=0,dur=5,quick=false,sound=true,vol=.6;
+let cur=0,busy=false,hist=[],wins=0,total=0;
+const SVG_ON='<svg viewBox="0 0 24 24"><path d="M11 5 6 9H3v6h3l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg>',SVG_OFF='<svg viewBox="0 0 24 24"><path d="M11 5 6 9H3v6h3l5 4V5z"/><path d="m22 9-6 6m0-6 6 6"/></svg>';
+const QM0=[2,4,8,10],QP0=[75,50,25,10];let qm=[...QM0],qp=[...QP0],auto=null;
+const $=id=>document.getElementById(id);
+const cv=$('c'),ctx=cv.getContext('2d'),sl=$('sl'),num=$('num'),durEl=$('dur');
+const nf=(x,d)=>x.toLocaleString('de-DE',{maximumFractionDigits:d});
+const fmtV=v=>v>=1e9?nf(v/1e9,2)+' Mrd. €':v>=1e6?nf(v/1e6,2)+' Mio. €':nf(v,v<10?2:0)+' €';
+const fmtM=m=>m>=1000?nf(Math.round(m),0)+'x':nf(+m.toFixed(2),2)+'x';
+const fmtP=p=>{if(p<=0)return'0%';const d=p>=10?1:p>=1?2:p>=.01?3:Math.min(12,Math.ceil(-Math.log10(p))+1);return nf(p,d)+'%'};
+const cnt=o=>Object.values(o).reduce((a,b)=>a+b,0);
+const sum=o=>Object.entries(o).reduce((s,[i,k])=>s+IT[i].v*k,0);
+const stakeVal=()=>sum(sel),invVal=()=>sum(inv);
+const hasStake=()=>stakeVal()>0;
+const maxed=()=>mode==='items'&&stakeVal()>=IT[IT.length-1].v;
+function fixTarget(){if(mode!=='items')return;const s=stakeVal();if(s>0&&IT[tg].v<=s){const j=IT.findIndex(t=>t.v>s);tg=j<0?IT.length-1:j}}
+const getMult=()=>mode==='items'?(hasStake()&&!maxed()?IT[tg].v/stakeVal():0):fmult;
+const chance=()=>{const m=getMult();return m>0?Math.min(100,100/m):0};
+
+// ---------- Speichern ----------
+function save(){try{localStorage.setItem(LS,JSON.stringify({inv,best,bestMult,wins,total,mode,fmult,dur,quick,sound,vol,qm,qp,hist:hist.slice(0,15)}))}catch(e){}}
+function load(){try{const d=JSON.parse(localStorage.getItem(LS)||'null');if(!d)return;
+ if(d.inv){const n={};for(const k in d.inv){const i=+k,c=Math.floor(+d.inv[k]);if(IT[i]&&c>0)n[i]=c}inv=n}
+ if(typeof d.best==='number'&&IT[d.best])best=d.best;bestMult=+d.bestMult||0;wins=+d.wins||0;total=+d.total||0;
+ if(d.mode==='free'||d.mode==='items')mode=d.mode;if(d.fmult>=MIN&&d.fmult<=MAX)fmult=d.fmult;
+ if(d.dur>=.3&&d.dur<=20)dur=d.dur;quick=!!d.quick;sound=d.sound!==false;if(d.vol>=0&&d.vol<=1)vol=d.vol;
+ if(Array.isArray(d.hist))hist=d.hist.slice(0,15);
+ const cl=(a,lo,hi)=>Array.isArray(a)?a.map(Number).filter(x=>x>lo&&x<hi).slice(0,8):[];
+ const a1=cl(d.qm,1,1001),a2=cl(d.qp,0,100);if(a1.length)qm=a1;if(a2.length)qp=a2;
+}catch(e){}}
+
+// ---------- Zahlenstrahl (log) ----------
+const toPos=x=>Math.round(1000*Math.log(x/MIN)/Math.log(MAX/MIN));
+const toVal=p=>MIN*Math.pow(MAX/MIN,p/1000);
+const rnd=x=>x<10?Math.round(x*100)/100:x<30?Math.round(x*10)/10:Math.round(x);
+[1.5,2,5,10,25,50,100].forEach(x=>{const s=document.createElement('span');s.textContent=x+'x';s.style.left=(toPos(x)/10)+'%';$('ticks').appendChild(s)});
+[0.5,5,10,15,20].forEach(x=>{const s=document.createElement('span');s.textContent=x+'s';s.style.left=((x-0.3)/19.7*100)+'%';$('dticks').appendChild(s)});
+function renderChips(){
+ $('qm').innerHTML=qm.map(x=>`<button onclick="qk('m',${x})">×${nf(x,2)}</button>`).join('');
+ $('qp').innerHTML=qp.map(x=>`<button onclick="qk('p',${x})">${nf(x,2)}%</button>`).join('');
+ $('qmIn').value=qm.join(', ');$('qpIn').value=qp.join(', ');
+}
+function qk(t,v){if(busy)return;
+ if(mode==='items'){auto={t,v};refresh();if(!hasStake())openStake()}
+ else{fmult=Math.min(MAX,Math.max(MIN,t==='m'?v:100/v));refresh();save()}}
+function applyAuto(){if(!auto||mode!=='items'||!hasStake()||maxed())return;
+ const s=stakeVal(),want=s*(auto.t==='m'?auto.v:100/auto.v);let bj=-1,bd=1e99;
+ IT.forEach((t,j)=>{if(t.v>s){const d=Math.abs(Math.log(t.v/want));if(d<bd){bd=d;bj=j}}});if(bj>=0)tg=bj}
+const parseList=(str,lo,hi)=>str.split(/[;,\s]+/).map(parseFloat).filter(x=>x>lo&&x<hi).slice(0,8);
+function editQuick(){const a=parseList($('qmIn').value,1,1001),b=parseList($('qpIn').value,0,100);if(a.length)qm=a;if(b.length)qp=b;renderChips();refresh();save()}
+function resetQuick(){qm=[...QM0];qp=[...QP0];renderChips();refresh();save()}
+function setMult(x){if(busy)return;fmult=Math.min(MAX,Math.max(MIN,x));refresh();save()}
+sl.oninput=()=>{if(busy){refresh();return}fmult=rnd(toVal(+sl.value));refresh(true);save()};
+num.onchange=()=>setMult(+num.value||2);
+durEl.oninput=()=>{dur=+durEl.value;refreshDur();save()};
+$('vol').oninput=e=>{vol=e.target.value/100;$('vl').textContent=e.target.value+'%';save()};
+function setMode(m){if(busy||m!==ONLY)return;mode=m;refresh();save()}
+function toggleQuick(){quick=!quick;refreshDur();save()}
+function toggleSound(){sound=!sound;updSound();save()}
+function updSound(){$('sb').textContent='Sound: '+(sound?'An':'Aus');$('sb').classList.toggle('on',sound);$('sbi').innerHTML=sound?SVG_ON:SVG_OFF;$('vol').value=vol*100;$('vl').textContent=Math.round(vol*100)+'%'}
+function refreshDur(){
+ durEl.value=dur;$('dl').textContent=dur+' s'+(quick?' (Schnell aktiv: '+QUICK+' s)':'');
+ $('qb').classList.toggle('on',quick);$('qb2').classList.toggle('on',quick);$('qb2').textContent='Schnell-Modus: '+(quick?'An':'Aus');
+}
+function updHist(){$('hist').innerHTML=hist.length?hist.slice(0,15).map(x=>`<i class="h ${x==='✅'?'w':'l'}"></i>`).join('')+`<span>${wins}/${total}</span>`:''}
+
+// ---------- Modals ----------
+const closeModal=id=>$(id).classList.remove('show');
+const openSettings=()=>$('mSet').classList.add('show');
+function openStake(){if(busy||mode!=='items')return;renderStake();$('mStake').classList.add('show')}
+function renderStake(){
+ const ids=Object.keys(inv).map(Number).sort((a,b)=>IT[a].v-IT[b].v);
+ $('slist').innerHTML=ids.length?ids.map(i=>`<div class="rw"><span>${IT[i].n}<br><small>${fmtV(IT[i].v)} · du hast ${inv[i]}×</small></span><span class="row"><button onclick="stk(${i},-1)">−</button><b>${sel[i]||0}</b><button onclick="stk(${i},1)">+</button></span></div>`).join(''):'<p style="color:var(--mut)">Dein Inventar ist leer. Hol dir ein Gratis-Item!</p>';
+ $('stot').textContent='Einsatz: '+fmtV(stakeVal());
+}
+function stk(i,d){const n=(sel[i]||0)+d;if(n<0||n>inv[i])return;if(n===0)delete sel[i];else sel[i]=n;renderStake();refresh()}
+function stkAll(){sel={...inv};renderStake();refresh()}
+function stkClear(){sel={};renderStake();refresh()}
+function openPicker(){
+ if(busy||mode!=='items')return;if(!hasStake()){openStake();return}if(maxed())return;
+ const s=stakeVal();
+ $('plist').innerHTML=IT.map((t,j)=>{if(t.v<=s)return'';const m=t.v/s;return `<button class="pk" onclick="pickT(${j})" style="border-left:5px solid ${t.c}"><span>${t.n}<br><small>${fmtV(t.v)}</small></span><span style="text-align:right"><b>${fmtM(m)}</b><br><small>${fmtP(100/m)}</small></span></button>`}).join('');
+ $('mPick').classList.add('show');
+}
+function pickT(j){tg=j;auto=null;closeModal('mPick');refresh()}
+function openList(){
+ const tv=invVal(),nx=IT.findIndex(t=>t.v>tv);
+ $('lhead').textContent=`Inventarwert: ${fmtV(tv)} · ${cnt(inv)} Items`;
+ $('llist').innerHTML=IT.map((t,i)=>`<div class="rw" style="border-left:5px solid ${t.c};padding-left:8px"><span>${t.n}${inv[i]?` <small>· ×${inv[i]}</small>`:''}${i===best?' <small>· bester Gewinn</small>':''}${i===nx?' <small style="color:#3ddc84">← nächstes Ziel</small>':''}</span><b>${fmtV(t.v)}</b></div>`).join('');
+ $('mList').classList.add('show');
+}
+function gift(){inv[0]=(inv[0]||0)+1;save();refresh()}
+let rc=0;
+function resetAll(){const b=$('rb');
+ if(!rc){rc=1;b.textContent='Wirklich löschen?';setTimeout(()=>{rc=0;b.textContent='Spielstand löschen'},3000);return}
+ rc=0;b.textContent='Spielstand löschen';inv={...START};sel={};best=-1;bestMult=0;wins=0;total=0;hist=[];tg=1;
+ save();updHist();$('res').textContent='';refresh();
+}
+
+// ---------- Rad ----------
+function draw(){
+ const c=340,R=326,r=292,mid=(R+r)/2,W=chance()*3.6,Wv=W>0?Math.max(W,1.5):0;
+ ctx.clearRect(0,0,680,680);
+ const arc=(a,b,st)=>{ctx.beginPath();ctx.arc(c,c,mid,(a-90)*Math.PI/180,(b-90)*Math.PI/180);ctx.lineWidth=R-r;ctx.strokeStyle=st;ctx.stroke()};
+ arc(0,360,'#1d1d21');if(Wv>0)arc(0,Math.min(Wv,359.99),'#3ddc84');
+}
+function refresh(fs){
+ applyAuto();fixTarget();
+ const items=mode==='items',hs=hasStake(),m=getMult(),p=chance();
+ const pt=(!items||hs)&&!maxed()?fmtP(p):'–';
+ $('pc').textContent=pt;$('pc').style.fontSize=pt.length>9?'22px':pt.length>7?'28px':pt.length>5?'36px':'44px';
+ $('info').textContent=items?(!hs?'Wähle Items als Einsatz':maxed()?'Einsatz zu hoch – kein besseres Item vorhanden':`${fmtM(m)} · Chance ${fmtP(p)}`):`${fmtM(m)} · Chance ${fmtP(p)}`;
+ $('itemrow').style.display=items?'flex':'none';
+ $('progbox').style.display=items?'block':'none';
+ $('secFree').style.display=items?'none':'block';
+ $('mdI').classList.toggle('on',items);$('mdF').classList.toggle('on',!items);
+ $('best').innerHTML=items?(best>=0?`<span>Bester Gewinn</span>${IT[best].n} · ${fmtV(IT[best].v)}`:'<span>Bester Gewinn</span>–'):(bestMult?`<span>Höchster Sieg</span>${fmtM(bestMult)}`:'<span>Höchster Sieg</span>–');
+ if(items){
+  const s=stakeVal(),k=cnt(sel),T=IT[tg];
+  $('stk').innerHTML=s>0?`<span class="k">Einsatz</span><b>${k} Item${k>1?'s':''}</b><small>${fmtV(s)}</small>`:'<span class="k">Einsatz</span><b>Auswählen</b><small>Items aus dem Inventar</small>';
+  $('tgt').innerHTML=`<span class="k">Ziel</span><b><i class="dot" style="background:${T.c}"></i>${T.n}</b><small>${fmtV(T.v)}</small>`;
+  const tv=invVal(),f=Math.max(0,Math.min(1,Math.log10(Math.max(tv,1))/9)),nx=IT.find(t=>t.v>tv);
+  $('fill').style.width=(f*100)+'%';
+  const mk=$('mk');if(best>=0){mk.style.display='block';mk.style.left=(Math.log10(IT[best].v)/9*100)+'%'}else mk.style.display='none';
+  $('ptxt').textContent=`${cnt(inv)} Items · Wert ${fmtV(tv)} · `+(nx?`nächstes Ziel: ${nx.n} (${fmtV(nx.v)})`:'alles geschafft');
+ }
+ $('gift').style.display=items&&cnt(inv)===0?'block':'none';
+ num.value=+(+fmult).toFixed(4);if(!fs)sl.value=toPos(fmult);
+ const act=(t,v)=>mode==='items'?!!(auto&&auto.t===t&&auto.v===v):(t==='m'?Math.abs(fmult-v)<.005:Math.abs(fmult-100/v)<.005);
+ document.querySelectorAll('#qm button').forEach((b,i)=>b.classList.toggle('on',act('m',qm[i])));
+ document.querySelectorAll('#qp button').forEach((b,i)=>b.classList.toggle('on',act('p',qp[i])));
+ $('go').textContent=items?(!hs?'Einsatz wählen':maxed()?'Einsatz zu hoch':'UPGRADE'):'UPGRADE';
+ draw();
+}
+
+// ---------- Effekte ----------
+const fx=$('fx'),fc=fx.getContext('2d');let parts=[],raf=0;
+const sizeFx=()=>{fx.width=innerWidth;fx.height=innerHeight};addEventListener('resize',sizeFx);sizeFx();
+function confetti(n){const cs=['#35e07a','#e0a135','#35a7e0','#d05ae0','#e03548','#fff'];
+ for(let i=0;i<n;i++)parts.push({x:innerWidth/2,y:innerHeight*.4,vx:(Math.random()-.5)*15,vy:-Math.random()*15-4,s:5+Math.random()*6,c:cs[i%6],r:Math.random()*6,vr:(Math.random()-.5)*.4,l:110+Math.random()*60});
+ if(!raf)loop()}
+function loop(){fc.clearRect(0,0,fx.width,fx.height);parts=parts.filter(p=>p.l>0&&p.y<fx.height+20);
+ parts.forEach(p=>{p.vy+=.35;p.x+=p.vx;p.y+=p.vy;p.r+=p.vr;p.l--;fc.save();fc.translate(p.x,p.y);fc.rotate(p.r);fc.fillStyle=p.c;fc.fillRect(-p.s/2,-p.s/3,p.s,p.s*.6);fc.restore()});
+ raf=parts.length?requestAnimationFrame(loop):0}
+function flash(c){const f=$('flash');f.className='';void f.offsetWidth;f.className=c==='glow'?'w':'l';const w=$('wrap');w.classList.remove('glow','shake');void w.offsetWidth;w.classList.add(c);setTimeout(()=>w.classList.remove(c),2300)}
+const vib=p=>{try{navigator.vibrate&&navigator.vibrate(p)}catch(e){}};
+
+// ---------- Sound (WebAudio) ----------
+let AC=null;
+function ac(){if(!AC)AC=new(window.AudioContext||window.webkitAudioContext)();if(AC.state==='suspended')AC.resume();return AC}
+function tone(f,t,d,type,g,f2){
+ const a=ac(),o=a.createOscillator(),gn=a.createGain();o.type=type;o.frequency.setValueAtTime(f,t);
+ if(f2)o.frequency.exponentialRampToValueAtTime(f2,t+d);
+ gn.gain.setValueAtTime(.0001,t);gn.gain.exponentialRampToValueAtTime(Math.max(.0002,g*vol),t+.008);
+ gn.gain.exponentialRampToValueAtTime(.0001,t+d);o.connect(gn);gn.connect(a.destination);o.start(t);o.stop(t+d+.03);
+}
+function noise(t,d,g,f,ft){const a=ac(),n=Math.floor(a.sampleRate*d),b=a.createBuffer(1,n,a.sampleRate),x=b.getChannelData(0);
+ for(let i=0;i<n;i++)x[i]=Math.random()*2-1;
+ const sr=a.createBufferSource(),fl=a.createBiquadFilter(),gn=a.createGain();sr.buffer=b;fl.type=ft||'lowpass';fl.frequency.value=f;
+ gn.gain.setValueAtTime(Math.max(.0002,g*vol),t);gn.gain.exponentialRampToValueAtTime(.0001,t+d);sr.connect(fl);fl.connect(gn);gn.connect(a.destination);sr.start(t)}
+function ftone(f,t,d,type,g,fc,f2){const a=ac(),o=a.createOscillator(),fl=a.createBiquadFilter(),gn=a.createGain(),G=Math.max(.0002,g*vol);
+ o.type=type;o.frequency.setValueAtTime(f,t);if(f2)o.frequency.exponentialRampToValueAtTime(f2,t+d);
+ fl.type='lowpass';fl.frequency.value=fc;gn.gain.setValueAtTime(.0001,t);gn.gain.exponentialRampToValueAtTime(G,t+.03);gn.gain.setValueAtTime(G,t+d*.7);gn.gain.exponentialRampToValueAtTime(.0001,t+d);
+ o.connect(fl);fl.connect(gn);gn.connect(a.destination);o.start(t);o.stop(t+d+.03)}
+function spinSound(T){if(!sound||vol<=0)return;try{
+ const t0=ac().currentTime+.02,N=Math.min(60,Math.max(4,Math.round(T*8)));
+ for(let i=1;i<=N;i++){const tt=T*(1-Math.pow(1-i/N,1/3));tone(950+(i%2)*140,t0+tt,.025,'triangle',.12)}}catch(e){}}
+// Gewinn: kurzes "Ding-Ding" (~0.3 s), bei großen Gewinnen eine Note mehr
+function winSound(big){if(!sound||vol<=0)return;try{const t=ac().currentTime+.02;
+ tone(988,t,.1,'square',.13);tone(1319,t+.08,.2,'square',.13);tone(2638,t+.08,.2,'sine',.06);
+ if(big)tone(1760,t+.17,.28,'square',.13)}catch(e){}}
+// Verlust: kurzes, weiches "Bu-bum" nach unten (~0.3 s)
+function loseSound(){if(!sound||vol<=0)return;try{const t=ac().currentTime+.02;
+ ftone(262,t,.14,'triangle',.32,900);ftone(185,t+.12,.22,'triangle',.32,700,150)}catch(e){}}
+function testSound(){winSound();setTimeout(loseSound,600)}
+const SIL='data:audio/wav;base64,UklGRigAAABXQVZFZm10IBIAAAABAAEARKwAAIhYAQACABAAAABkYXRhAgAAAAEA';
+function unlock(){
+ try{if(navigator.audioSession)navigator.audioSession.type='playback'}catch(e){}
+ try{const a=ac(),b=a.createBuffer(1,1,22050),s=a.createBufferSource();s.buffer=b;s.connect(a.destination);s.start(0)}catch(e){}
+ if(!window._sa){try{const au=new Audio(SIL);au.loop=true;au.volume=.01;const pr=au.play();if(pr&&pr.catch)pr.catch(()=>{});window._sa=au}catch(e){}}
+}
+['pointerdown','touchstart','click'].forEach(ev=>document.addEventListener(ev,unlock,{passive:true}));
+
+// ---------- Spin ----------
+function spin(){
+ if(busy)return;
+ if(mode==='items'){if(!hasStake()){openStake();return}if(maxed())return}
+ busy=true;$('go').disabled=true;
+ const res=$('res');res.textContent='';
+ const t0=quick?QUICK:dur,p=chance(),W=p*3.6,Wv=Math.max(W,1.5),win=Math.random()*100<p;
+ const m=Math.min(1.5,Math.max(.2,(win?Wv:360-Wv)/10));
+ const t=win?m+Math.random()*(Wv-2*m):Wv+m+Math.random()*(360-Wv-2*m);
+ const delta=(((t-cur)%360)+360)%360,spins=Math.max(1,Math.round(t0*1.2));
+ cur+=360*spins+delta;
+ const n=$('n');n.style.transition=`transform ${t0}s cubic-bezier(.1,.7,.1,1)`;n.style.transform=`rotate(${cur}deg)`;
+ spinSound(t0);
+ const S={...sel},sv=stakeVal(),tI=tg,mm=getMult(),k=cnt(S),wasItems=mode==='items';
+ setTimeout(()=>{
+  total++;if(win)wins++;
+  if(wasItems){
+   for(const i in S){inv[i]-=S[i];if(inv[i]<=0)delete inv[i]}
+   if(win){inv[tI]=(inv[tI]||0)+1;if(best<0||IT[tI].v>IT[best].v)best=tI}
+   sel={};
+   res.textContent=win?`Gewonnen: ${IT[tI].n} (${fmtV(IT[tI].v)})`:`Verloren: ${k} Item${k>1?'s':''} weg (${fmtV(sv)})`+(cnt(inv)===0?' – hol dir ein Gratis-Item!':'');
+  }else{
+   if(win&&mm>bestMult)bestMult=mm;
+   res.textContent=win?`Gewonnen (${fmtM(mm)})`:'Verloren';
+  }
+  res.style.color=win?'#3ddc84':'#e5484d';res.classList.remove('pop');void res.offsetWidth;res.classList.add('pop');
+  if(win){winSound(wasItems&&IT[tI].v>=10000);flash('glow');vib([80,40,80,40,160])}
+  else{loseSound();flash('shake');vib(300)}
+  hist.unshift(win?'✅':'❌');updHist();save();
+  busy=false;$('go').disabled=false;refresh();
+ },t0*1000+200);
+}
+load();mode=ONLY;renderChips();refresh();refreshDur();updSound();updHist();
+try{ // Handy-App: Manifest zur Laufzeit
+ const ICON=document.querySelector('link[rel=apple-touch-icon]').href;
+ const man={name:'Multi-Upgrader',short_name:'Multi-Upgrader',display:'standalone',background_color:'#0a0a0b',theme_color:'#0a0a0b',start_url:location.href,icons:[{src:ICON,sizes:'192x192',type:'image/png'}]};
+ const l=document.createElement('link');l.rel='manifest';l.href=URL.createObjectURL(new Blob([JSON.stringify(man)],{type:'application/manifest+json'}));document.head.appendChild(l);
+}catch(e){}
+</script></body></html>
